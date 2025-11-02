@@ -174,7 +174,5 @@ RFM segmentation provides a powerful framework for identifying which customers t
 ---
 
 ## ✍️ Author
-**Ray [Your Surname]**  
-📧 your.email@email.com  
-🔗 [LinkedIn Profile]  
-💻 [GitHub Profile]
+**Jack Lane**  
+📧 jack@jacklanelondon.com  
