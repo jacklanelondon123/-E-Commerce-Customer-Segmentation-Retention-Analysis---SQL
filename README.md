@@ -36,7 +36,7 @@ The dataset includes anonymized transaction-level records containing:
 Customers were grouped by their first purchase month (**Cohort Month**) and tracked across future purchase months.
 
 ### Cohort Heatmap
-*(Insert image here if available — e.g., images/cohort_heatmap.png)*
+![Cohort Heatmap](images/cohort%20heatmap%20excel%20image.png)
 
 **Insights**
 - Retention drops significantly after the first few months — a typical long-tail trend.  
@@ -75,15 +75,7 @@ FROM dbo.v_rfm_scores;
 ## 🔹 Step 3: Customer Distribution by Segment
 After creating the SQL view, results were exported to Excel to summarize and visualize customer segment distribution.
 
-| Segment      | Count |
-|--------------|------:|
-| Regular      |   840 |
-| Churned      |   552 |
-| At Risk      |   448 |
-| VIP          |   373 |
-| Loyal        |   249 |
-| New Customer |    38 |
-| **Total**    | **2,500** |
+![Customer Distribution](images/rfm%20chart%20image%201.png)
 
 **Insights**
 - Regular customers (34%) form the largest active base.  
@@ -102,14 +94,7 @@ After creating the SQL view, results were exported to Excel to summarize and vis
 ## 🔹 Step 4: Average Spend by Segment
 To understand revenue patterns, the average spend per customer was analyzed across segments.
 
-| Segment      | Average Spend (£) |
-|--------------|------------------:|
-| VIP          | £1,401 |
-| At Risk      | £2,425 |
-| Loyal        | £2,415 |
-| Regular      | £3,839 |
-| Churned      | £4,421 |
-| New Customer | £5,192 |
+![Average Spend by Segment](images/rfm%20chart%20image%202.png)
 
 **Insights**
 - New Customers show the highest spend (£5,192), likely due to larger first-time purchases.  
@@ -121,17 +106,48 @@ Adjust VIP scoring to prioritize **Monetary value** to better identify truly hig
 
 ---
 
-## 🔹 Step 5: Final Insights & Business Value
+## 🔹 Step 5: Supporting Channel and Product Insights
+
+### Top Channels by Lifetime Value (LTV)
+![LTV by Channel](images/Screenshot%202025-10-10%20012220.png)
+
+- **Email** and **Display** channels have the highest LTV (£3,400+), suggesting they are strong performers for retention.  
+- **Social** and **Affiliate** channels show lower LTVs, indicating potential underperformance.  
+- Optimizing ad spend toward high-LTV channels could increase profitability.
+
+### Top Products by Revenue
+![Top Products by Revenue](images/Screenshot%202025-10-10%20012227.png)
+
+- High revenue concentration in **Books** and **Toys** categories.  
+- Suggests that marketing campaigns could leverage these best-selling categories for cross-selling and bundle offers.
+
+---
+
+## 🔹 Step 6: Monthly Sales Trends
+To evaluate growth and engagement over time, monthly revenue and order trends were analyzed.
+
+![Monthly Trends](images/Screenshot%202025-10-10%20012251.png)
+![Monthly Trends Continued](images/Screenshot%202025-10-10%20012321.png)
+
+**Insights**
+- Strong month-on-month revenue growth from early 2023 through late 2025.  
+- Steady increases in average order value and unique buyers.  
+- Highlights successful acquisition and retention over time.
+
+---
+
+## 🔹 Step 7: Final Insights & Business Value
 
 **Key Findings**
-- High early engagement but declining long-term retention  
-- “Regular” and “At Risk” segments represent major growth opportunities  
-- VIP classification needs refinement  
+- High early engagement but declining long-term retention.  
+- “Regular” and “At Risk” segments represent major growth opportunities.  
+- VIP classification needs refinement for higher value targeting.  
 
 **Strategic Recommendations**
-- Automate retention campaigns for Churned and At Risk segments  
-- Personalize offers using RFM-based targeting  
-- Recalculate RFM segmentation quarterly to track evolving behavior  
+- Automate retention campaigns for **Churned** and **At Risk** segments.  
+- Personalize offers using **RFM-based targeting**.  
+- Recalculate RFM segmentation quarterly to track evolving behavior.  
+- Prioritize high-LTV channels and top product categories for sustained growth.
 
 ---
 
@@ -141,22 +157,24 @@ Adjust VIP scoring to prioritize **Monetary value** to better identify truly hig
 | RFM_analysis.sql | SQL script for RFM segmentation |
 | cohort_revenue.xlsx | Cohort analysis tables and visuals |
 | rfm_segments.xlsx | Pivot tables and RFM segment breakdown |
-| images/ | Containing visuals for charts and heatmaps |
+| images/ | Contains visuals and charts used in this README |
 | README.md | Full documentation (this file) |
 
 ---
 
 ## 🌟 Reflection
 This project demonstrates my ability to:
-- Create a full data-to-insight workflow using SQL and Excel  
-- Translate analytics into business strategy and segmentation models  
-- Communicate findings through clear data storytelling  
+- Build a complete data-to-insight workflow using SQL and Excel  
+- Translate analytics into actionable business recommendations  
+- Communicate findings clearly through visual storytelling  
 
 **Key learning:**  
-RFM segmentation provides a simple yet powerful framework for identifying which customers to retain, nurture, or win back, and where to focus marketing spend for maximum ROI.
+RFM segmentation provides a powerful framework for identifying which customers to retain, nurture, or win back, and where to focus marketing spend for maximum ROI.
 
 ---
 
 ## ✍️ Author
-**Jack Lane**  
-jack@jacklanelondon.com
+**Ray [Your Surname]**  
+📧 your.email@email.com  
+🔗 [LinkedIn Profile]  
+💻 [GitHub Profile]
