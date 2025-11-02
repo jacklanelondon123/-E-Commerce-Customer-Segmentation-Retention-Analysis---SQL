@@ -36,7 +36,7 @@ The dataset includes anonymized transaction-level records containing:
 Customers were grouped by their first purchase month (**Cohort Month**) and tracked across future purchase months.
 
 ### 📊 Cohort Heatmap
-*(Insert image here if available — e.g., `images/cohort_heatmap.png`)*
+*(Insert image if available — e.g., `images/cohort_heatmap.png`)*
 
 ### 🔍 Insights
 - Retention drops significantly after the first few months — a typical long-tail trend.  
@@ -69,10 +69,7 @@ SELECT
         ELSE 'Regular'
     END AS segment
 FROM dbo.v_rfm_scores;
-
-
 🔹 Step 3: Customer Distribution by Segment
-
 After creating the SQL view, results were exported to Excel to summarize and visualize customer segment distribution.
 
 Segment	Count
@@ -83,8 +80,8 @@ VIP	373
 Loyal	249
 New Customer	38
 Total	2,500
-🔍 Insights
 
+🔍 Insights
 Regular customers (34%) form the largest active base.
 
 Churned customers (552) highlight significant potential loss.
@@ -96,7 +93,6 @@ VIPs (373) and Loyals (249) represent highly engaged, valuable users.
 New Customers (38) are few, suggesting weak acquisition momentum.
 
 💡 Recommendations
-
 Target Churned and At Risk customers with win-back campaigns.
 
 Reward VIPs and Loyals to encourage repeat purchases.
@@ -104,7 +100,6 @@ Reward VIPs and Loyals to encourage repeat purchases.
 Strengthen acquisition strategies to expand new customer inflow.
 
 🔹 Step 4: Average Spend by Segment
-
 To understand revenue patterns, the average spend per customer was analyzed across segments.
 
 Segment	Average Spend (£)
@@ -114,8 +109,8 @@ Loyal	£2,415
 Regular	£3,839
 Churned	£4,421
 New Customer	£5,192
-🔍 Insights
 
+🔍 Insights
 New Customers show the highest spend (£5,192), likely due to larger first-time purchases.
 
 Churned customers had high past value — potential reactivation ROI.
@@ -127,7 +122,6 @@ Adjust VIP scoring to prioritize Monetary value to better identify truly high-va
 
 🔹 Step 5: Final Insights & Business Value
 📈 Key Findings
-
 High early engagement but declining long-term retention
 
 “Regular” and “At Risk” segments represent major growth opportunities
@@ -135,7 +129,6 @@ High early engagement but declining long-term retention
 VIP classification needs refinement
 
 💼 Strategic Recommendations
-
 Automate retention campaigns for Churned and At Risk segments
 
 Personalize offers using RFM-based targeting
@@ -147,10 +140,10 @@ File	Description
 RFM_analysis.sql	SQL script for RFM segmentation
 cohort_revenue.xlsx	Cohort analysis tables and visuals
 rfm_segments.xlsx	Pivot tables and RFM segment breakdown
-images/	Folder containing visuals for charts and heatmaps
+images/	Visuals for charts and heatmaps
 README.md	Full documentation (this file)
-🌟 Reflection
 
+🌟 Reflection
 This project demonstrates my ability to:
 
 Create a full data-to-insight workflow using SQL and Excel
@@ -163,9 +156,7 @@ Key learning:
 RFM segmentation provides a simple yet powerful framework for identifying which customers to retain, nurture, or win back, and where to focus marketing spend for maximum ROI.
 
 ✍️ Author
-
 Ray [Your Surname]
 📧 your.email@email.com
-
 🔗 [LinkedIn Profile]
 💻 [GitHub Profile]
