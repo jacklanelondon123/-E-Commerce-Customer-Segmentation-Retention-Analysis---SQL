@@ -1,11 +1,11 @@
 # 🛍️ E-Commerce Customer Segmentation & Retention Analysis
 
 ## 📘 Project Overview
-This project investigates **customer behavior and retention** using SQL Server, Excel, and visualization techniques.  
+This project investigates customer behavior and retention using **SQL Server**, **Excel**, and visualization techniques.  
 It focuses on two main analytical frameworks:
 
-1. **Cohort Analysis** – tracking customer retention and revenue over time  
-2. **RFM Segmentation** – grouping customers based on **Recency, Frequency, and Monetary value**
+- **Cohort Analysis** – tracking customer retention and revenue over time  
+- **RFM Segmentation** – grouping customers based on Recency, Frequency, and Monetary value  
 
 The goal was to uncover insights that drive smarter marketing, improved retention, and higher lifetime customer value.
 
@@ -14,7 +14,7 @@ The goal was to uncover insights that drive smarter marketing, improved retentio
 ## 🎯 Objectives
 - Understand customer purchase behavior over time  
 - Identify retention and cohort trends  
-- Segment customers into actionable RFM categories (VIP, Loyal, At Risk, Churned)  
+- Segment customers into actionable RFM categories (**VIP**, **Loyal**, **At Risk**, **Churned**)  
 - Deliver practical, data-driven recommendations  
 
 ---
@@ -28,31 +28,30 @@ The goal was to uncover insights that drive smarter marketing, improved retentio
 
 ## 📂 Dataset
 The dataset includes anonymized transaction-level records containing:  
-`customer_id`, `order_date`, `amount`, `recency_days`, `frequency`, `monetary`, and the derived metrics `R_score`, `F_score`, `M_score`, and final `segment`.
+`customer_id`, `order_date`, `amount`, `recency_days`, `frequency`, `monetary`, and the derived metrics `R_score`, `F_score`, `M_score`, and `segment`.
 
 ---
 
 ## 🔹 Step 1: Cohort Analysis
-Customers were grouped by their **first purchase month (Cohort Month)** and tracked across future purchase months.  
+Customers were grouped by their first purchase month (**Cohort Month**) and tracked across future purchase months.
 
-### Cohort Heatmap
-![Cohort Heatmap](images/cohort_heatmap.png)
+### 📊 Cohort Heatmap
+*(Insert image here if available — e.g., `images/cohort_heatmap.png`)*
 
-### Insights
+### 🔍 Insights
 - Retention drops significantly after the first few months — a typical long-tail trend.  
 - Some cohorts maintain better second-month retention, suggesting effective short-term promotions.  
-- Overall retention decay indicates opportunity to improve post-onboarding engagement.  
+- Overall retention decay indicates opportunity to improve post-onboarding engagement.
 
 **Takeaway:**  
-> The company achieves strong early engagement but lacks long-term retention. Implementing loyalty programs or follow-up discounts could help sustain repeat purchases.
+The company achieves strong early engagement but lacks long-term retention. Implementing loyalty programs or follow-up discounts could help sustain repeat purchases.
 
 ---
 
 ## 🔹 Step 2: RFM Segmentation
 Customers were segmented by their **Recency (R)**, **Frequency (F)**, and **Monetary (M)** scores.
 
-### SQL Script
-
+### 🧾 SQL Script
 ```sql
 CREATE VIEW dbo.v_rfm_segments AS
 SELECT
@@ -71,6 +70,7 @@ SELECT
     END AS segment
 FROM dbo.v_rfm_scores;
 
+
 🔹 Step 3: Customer Distribution by Segment
 
 After creating the SQL view, results were exported to Excel to summarize and visualize customer segment distribution.
@@ -83,8 +83,7 @@ VIP	373
 Loyal	249
 New Customer	38
 Total	2,500
-
-Insights
+🔍 Insights
 
 Regular customers (34%) form the largest active base.
 
@@ -96,7 +95,7 @@ VIPs (373) and Loyals (249) represent highly engaged, valuable users.
 
 New Customers (38) are few, suggesting weak acquisition momentum.
 
-Recommendations
+💡 Recommendations
 
 Target Churned and At Risk customers with win-back campaigns.
 
@@ -115,8 +114,7 @@ Loyal	£2,415
 Regular	£3,839
 Churned	£4,421
 New Customer	£5,192
-
-Insights
+🔍 Insights
 
 New Customers show the highest spend (£5,192), likely due to larger first-time purchases.
 
@@ -125,11 +123,10 @@ Churned customers had high past value — potential reactivation ROI.
 VIPs spend less than expected, suggesting VIP criteria may emphasize activity over value.
 
 Recommendation:
-
 Adjust VIP scoring to prioritize Monetary value to better identify truly high-value customers.
 
 🔹 Step 5: Final Insights & Business Value
-Key Findings
+📈 Key Findings
 
 High early engagement but declining long-term retention
 
@@ -137,7 +134,7 @@ High early engagement but declining long-term retention
 
 VIP classification needs refinement
 
-Strategic Recommendations
+💼 Strategic Recommendations
 
 Automate retention campaigns for Churned and At Risk segments
 
@@ -150,7 +147,7 @@ File	Description
 RFM_analysis.sql	SQL script for RFM segmentation
 cohort_revenue.xlsx	Cohort analysis tables and visuals
 rfm_segments.xlsx	Pivot tables and RFM segment breakdown
-images/	Containing visuals for charts and heatmaps
+images/	Folder containing visuals for charts and heatmaps
 README.md	Full documentation (this file)
 🌟 Reflection
 
@@ -160,7 +157,7 @@ Create a full data-to-insight workflow using SQL and Excel
 
 Translate analytics into business strategy and segmentation models
 
-Communicate findings through clear data storytelling
+Communicate findings through clear, visual storytelling
 
 Key learning:
 RFM segmentation provides a simple yet powerful framework for identifying which customers to retain, nurture, or win back, and where to focus marketing spend for maximum ROI.
