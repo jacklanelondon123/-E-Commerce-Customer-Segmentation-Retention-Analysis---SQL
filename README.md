@@ -1,60 +1,68 @@
 # 🛍️ E-Commerce Customer Segmentation & Retention Analysis
 
-## 📖 Project Overview
-This project explores **customer behavior and retention patterns** for an e-commerce business using SQL Server, Excel, and data visualization techniques. The analysis focuses on two key frameworks:  
-1. **Cohort Analysis** – tracking customer retention and revenue over time.  
-2. **RFM Segmentation** – grouping customers based on **Recency, Frequency, and Monetary** metrics.  
-The goal was to uncover insights that could drive smarter marketing, improve retention, and increase lifetime customer value.
+## 📘 Project Overview
+This project investigates **customer behavior and retention** using SQL Server, Excel, and data visualization.  
+It focuses on two key analytical approaches:
+
+1. **Cohort Analysis** – tracking customer retention and revenue over time  
+2. **RFM Segmentation** – grouping customers based on **Recency, Frequency, and Monetary value**
+
+The objective is to uncover actionable insights that help drive smarter marketing, stronger retention, and higher customer lifetime value.
 
 ---
 
 ## 🎯 Objectives
-- Understand **customer purchase behavior** over time.  
-- Identify **retention trends** and **cohort performance**.  
-- Segment customers into **meaningful RFM categories** (e.g., VIP, Loyal, At Risk, Churned).  
-- Provide **data-driven recommendations** for retention and growth.
+- Understand customer purchase behavior over time  
+- Identify retention trends and cohort performance  
+- Segment customers into meaningful RFM categories (VIP, Loyal, At Risk, Churned, etc.)  
+- Deliver insights and data-driven recommendations for marketing optimization  
 
 ---
 
-## 🧩 Tools & Skills Used
-- **SQL Server** – Data cleaning, transformation, RFM scoring & cohort creation.  
-- **Excel** – PivotTables, conditional formatting, and data visualization.  
-- **Data storytelling** – Translating findings into business insights.  
+## 🧰 Tools & Skills
+- **SQL Server** – for data preparation, transformation, and scoring  
+- **Excel** – for PivotTables, visualization, and storytelling  
+- **Data Analysis & Storytelling** – communicating insights effectively  
 
 ---
 
 ## 📂 Dataset
-The dataset includes anonymized customer transaction records with:  
-- `customer_id`  
-- `order_date`  
-- `amount`  
-- `recency_days`  
-- `frequency`  
-- `monetary`  
-- derived `R_score`, `F_score`, `M_score`, and final RFM segment.  
+The dataset contains anonymized transaction data including:
+- `customer_id`
+- `order_date`
+- `amount`
+- `recency_days`
+- `frequency`
+- `monetary`
+- derived metrics: `R_score`, `F_score`, `M_score`, and `segment`
 
 ---
 
-## 🔍 Step 1 – Cohort Analysis
-Using SQL, I created a **cohort-based revenue view**, grouping customers by the month of their first purchase (`Cohort_month`) and tracking their subsequent spending across future months (`Order_month`).
+## 🔹 Step 1: Cohort Analysis
+Cohort analysis groups customers by the month of their first purchase (`Cohort_month`) and tracks spending across future months (`Order_month`).
 
-### 📊 Cohort Heatmap
-Using Excel’s conditional color scales, I visualized the **retention trend**:  
+### Cohort Heatmap
+Using Excel’s color scales, I visualized retention and revenue behavior.
+
 ![Cohort Heatmap](images/cohort_heatmap.png)
 
-#### 🧠 Insight:
-- Retention drops sharply after the first few months — a classic “long tail” retention curve.  
-- Certain months show stronger second-month retention, suggesting successful short-term campaigns.  
-- The early cohorts have **consistent but gradual revenue decay**, implying room for retention improvement.  
+### Key Insights
+- Retention drops sharply after the first few months – a classic “long tail” trend  
+- Some cohorts maintain higher second-month revenue, indicating successful short-term campaigns  
+- Revenue gradually declines over time, showing room for retention improvement  
 
-#### ✅ Key takeaway:
-> The business retains a strong initial engagement period, but needs to improve post-onboarding retention through follow-up offers or loyalty programs.
+**Takeaway:**  
+> The company shows strong early engagement but weak long-term retention. Implementing loyalty programs and personalized follow-ups could help extend customer lifespan.
 
 ---
 
-## 💎 Step 2 – RFM Segmentation
-I built a SQL view to calculate **Recency, Frequency, and Monetary** scores (1–5 scale) for each customer.
+## 🔹 Step 2: RFM Segmentation
+RFM segmentation categorizes customers based on:
+- **Recency (R):** How recently they purchased  
+- **Frequency (F):** How often they purchase  
+- **Monetary (M):** How much they spend  
 
+### SQL Script
 ```sql
 CREATE VIEW dbo.v_rfm_segments AS
 SELECT
@@ -73,11 +81,11 @@ SELECT
     END AS segment
 FROM dbo.v_rfm_scores;
 
-Then, I aggregated the results to analyze segment sizes and averages.
+🔹 Step 3: Customer Distribution by Segment
 
-👥 Step 3 – Customer Distribution by Segment
-📊 Pivot Table Summary
-Segment	Customers
+The SQL results were visualized in Excel to show how customers distribute across RFM categories.
+
+Segment	Count
 Regular	840
 Churned	552
 At Risk	448
@@ -86,85 +94,90 @@ Loyal	249
 New Customer	38
 Total	2,500
 
-🧠 Insight:
+Insights
 
-Regular customers form the largest group (34%), showing a solid active base.
+Regular customers (34%) form the largest active base
 
-Churned customers (552) indicate a worrying drop-off rate.
+Churned customers (552) represent significant loss potential
 
-At Risk (448) customers could be reactivated before they churn completely.
+At Risk (448) customers can still be reactivated
 
-VIPs (373) and Loyals (249) form the most valuable and engaged tiers.
+VIP (373) and Loyal (249) are high-engagement groups
 
-New Customers (38) are few, suggesting that acquisition could be improved.
+New Customers (38) are few, highlighting weak acquisition
 
-✅ Recommendations:
+Recommendations
 
-Re-engage “Churned” & “At Risk” segments with personalized offers or win-back campaigns.
+Target Churned and At Risk customers with win-back campaigns
 
-Reward “Loyal” and “VIP” customers with exclusive perks to increase advocacy.
+Reward VIPs and Loyals with loyalty perks
 
-Improve acquisition efforts to grow the “New Customer” base.
+Enhance acquisition to grow the new customer pipeline
 
-💷 Step 4 – Average Spend by Segment
+🔹 Step 4: Average Spend by Segment
 
-I compared average monetary value across segments to see where the most profitable customers lie.
+This visualization compares average spend per customer for each RFM segment.
 
+Segment	Avg. Spend (£)
+VIP	£1,401
+At Risk	£2,425
+Loyal	£2,415
+Regular	£3,839
+Churned	£4,421
+New Customer	£5,192
 
-🧠 Insight:
+Insights
 
-New Customers have the highest average spend (£5,192) — likely due to initial offers or bulk first-time purchases.
+New Customers have the highest average spend (£5,192), likely due to initial purchases
 
-Churned customers once spent significantly (£4,421) but have since dropped off.
+Churned customers previously had high value and could be reactivated profitably
 
-Regular and At Risk customers show stable spend levels.
+VIPs show low average spend — VIP status seems frequency-driven rather than value-based
 
-VIP customers surprisingly have lower spend (£1,401), suggesting that “VIP” status may be defined by frequency, not value — an opportunity to refine the scoring logic.
+Recommendation:
 
-✅ Recommendation:
+Refine the RFM scoring to weight Monetary value more heavily for a more accurate VIP definition.
 
-Review the VIP definition — consider weighting Monetary more heavily or running a revenue-based segmentation to better align rewards with actual spend.
+🔹 Step 5: Final Insights & Business Value
+Key Findings
 
-🧭 Step 5 – Final Insights & Business Value
-📈 Key Findings:
+High early engagement, low long-term retention
 
-The business retains strong early engagement but struggles with long-term retention.
+“Regular” and “At Risk” segments offer the greatest upsell opportunity
 
-“Regular” and “At Risk” customers represent the largest potential for upselling.
+VIP definition could be optimized to better reflect true spenders
 
-The RFM model highlights that not all “VIPs” are necessarily high-value — segmentation logic should evolve over time.
+Strategic Recommendations
 
-💡 Strategic Recommendations:
+Automate retention campaigns targeting Churned and At Risk customers
 
-Retention Focus: Automate win-back campaigns targeting Churned and At Risk segments.
+Personalize offers based on RFM segments
 
-Personalization: Tailor offers based on RFM scores to increase conversion and lifetime value.
+Refresh segmentation quarterly to monitor behavioral change
 
-Data Refresh: Re-run RFM scoring quarterly to track changes in customer behavior.
-
-🧰 Files in This Repository
+📊 Files in Repository
 File	Description
-RFM_analysis.sql	SQL script for cohort and RFM segmentation
-cohort_revenue.xlsx	Cohort revenue pivot tables and heatmap
-rfm_segments.xlsx	RFM segment distribution and analysis
-images/	Folder containing visual outputs (charts, heatmaps)
-README.md	This project documentation
-🌟 Project Reflection
+RFM_analysis.sql	SQL code for cohort and RFM segmentation
+cohort_revenue.xlsx	Cohort analysis and heatmap
+rfm_segments.xlsx	RFM segmentation pivot tables and visuals
+images/	Folder containing all charts and screenshots
+README.md	Full project documentation
+🌟 Reflection
 
-This project demonstrates my ability to:
+This project demonstrates:
 
-Design end-to-end analytical workflows.
+End-to-end analytical workflow from SQL to visualization
 
-Combine SQL logic with Excel visualization.
+Ability to turn data into actionable marketing strategy
 
-Tell a clear story from raw data to actionable insight.
+Strong use of storytelling and insight-driven presentation
 
-Through this project, I learned how data segmentation can guide marketing strategy, drive customer retention, and reveal hidden behavioral patterns in e-commerce data.
+Through this project, I learned how RFM and cohort frameworks help businesses measure loyalty, retention, and customer value to guide smarter marketing decisions.
 
-🧾 Author
+✍️ Author
 
 Ray [Your Surname]
-📧 [your.email@email.com
-]
+📧 your.email@email.com
+
 🔗 [LinkedIn Profile]
 💻 [GitHub Profile]
