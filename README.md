@@ -158,7 +158,5 @@ RFM segmentation provides a simple yet powerful framework for identifying which 
 ---
 
 ## ✍️ Author
-**Ray [Your Surname]**  
-📧 your.email@email.com  
-🔗 [LinkedIn Profile]  
-💻 [GitHub Profile]
+**Jack Lane**  
+jack@jacklanelondon.com
